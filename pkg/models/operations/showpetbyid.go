@@ -2,6 +2,7 @@ package operations
 
 import (
 	"github.com/speakeasy-sdks/advith-petstore-golang/pkg/models/shared"
+	"net/http"
 )
 
 type ShowPetByIDPathParams struct {
@@ -17,4 +18,5 @@ type ShowPetByIDResponse struct {
 	Error       *shared.Error
 	Pet         *shared.Pet
 	StatusCode  int
+	RawResponse *http.Response
 }

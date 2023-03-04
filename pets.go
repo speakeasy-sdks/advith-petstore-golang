@@ -56,6 +56,7 @@ func (s *pets) CreatePets(ctx context.Context) (*operations.CreatePetsResponse, 
 	res := &operations.CreatePetsResponse{
 		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
+		RawResponse: httpRes,
 	}
 	switch {
 	case httpRes.StatusCode == 201:
@@ -104,6 +105,7 @@ func (s *pets) ListPets(ctx context.Context, request operations.ListPetsRequest)
 	res := &operations.ListPetsResponse{
 		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
+		RawResponse: httpRes,
 	}
 	switch {
 	case httpRes.StatusCode == 200:
@@ -157,6 +159,7 @@ func (s *pets) ShowPetByID(ctx context.Context, request operations.ShowPetByIDRe
 	res := &operations.ShowPetByIDResponse{
 		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
+		RawResponse: httpRes,
 	}
 	switch {
 	case httpRes.StatusCode == 200:

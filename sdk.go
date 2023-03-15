@@ -57,8 +57,8 @@ func WithClient(client HTTPClient) SDKOption {
 func New(opts ...SDKOption) *SDK {
 	sdk := &SDK{
 		_language:   "go",
-		_sdkVersion: "0.5.1",
-		_genVersion: "1.9.2",
+		_sdkVersion: "0.6.0",
+		_genVersion: "1.11.0",
 	}
 	for _, opt := range opts {
 		opt(sdk)
@@ -69,9 +69,7 @@ func New(opts ...SDKOption) *SDK {
 		sdk._defaultClient = &http.Client{Timeout: 60 * time.Second}
 	}
 	if sdk._securityClient == nil {
-
 		sdk._securityClient = sdk._defaultClient
-
 	}
 
 	if sdk._serverURL == "" {

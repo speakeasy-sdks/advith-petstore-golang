@@ -85,7 +85,7 @@ func (s *pets) ListPets(ctx context.Context, request operations.ListPetsRequest)
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -136,7 +136,7 @@ func (s *pets) ListPets(ctx context.Context, request operations.ListPetsRequest)
 // ShowPetByID - Info for a specific pet
 func (s *pets) ShowPetByID(ctx context.Context, request operations.ShowPetByIDRequest) (*operations.ShowPetByIDResponse, error) {
 	baseURL := s.serverURL
-	url := utils.GenerateURL(ctx, baseURL, "/pets/{petId}", request.PathParams)
+	url := utils.GenerateURL(ctx, baseURL, "/pets/{petId}", request.PathParams, nil)
 
 	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
 	if err != nil {

@@ -2,10 +2,10 @@ configVersion: 1.0.0
 management:
     docChecksum: 2516596125ef223fbbef6c434d22eaac
     docVersion: 1.0.0
-    speakeasyVersion: 1.19.6
+    speakeasyVersion: 1.19.7
 generation:
     telemetryEnabled: false
     sdkClassName: SDK
 go:
-    version: 0.12.2
+    version: 0.12.3
     packageName: github.com/speakeasy-sdks/advith-petstore-golang

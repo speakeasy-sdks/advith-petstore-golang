@@ -55,12 +55,10 @@ import(
 func main() {
     s := sdk.New()
 
-    ctx := context.Background()    
-    req := operations.ListPetsRequest{
+    ctx := context.Background()
+    res, err := s.Pets.ListPets(ctx, operations.ListPetsRequest{
         Limit: sdk.Int(548814),
-    }
-
-    res, err := s.Pets.ListPets(ctx, req)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -90,12 +88,10 @@ import(
 func main() {
     s := sdk.New()
 
-    ctx := context.Background()    
-    req := operations.ShowPetByIDRequest{
+    ctx := context.Background()
+    res, err := s.Pets.ShowPetByID(ctx, operations.ShowPetByIDRequest{
         PetID: "provident",
-    }
-
-    res, err := s.Pets.ShowPetByID(ctx, req)
+    })
     if err != nil {
         log.Fatal(err)
     }

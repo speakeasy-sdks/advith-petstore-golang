@@ -33,7 +33,6 @@ func newPets(defaultClient, securityClient HTTPClient, serverURL, language, sdkV
 }
 
 // CreatePets - Create a pet
-
 func (s *pets) CreatePets(ctx context.Context) (*operations.CreatePetsResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/pets"
@@ -79,7 +78,6 @@ func (s *pets) CreatePets(ctx context.Context) (*operations.CreatePetsResponse, 
 }
 
 // ListPets - List all pets
-
 func (s *pets) ListPets(ctx context.Context, request operations.ListPetsRequest) (*operations.ListPetsResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/pets"
@@ -138,7 +136,6 @@ func (s *pets) ListPets(ctx context.Context, request operations.ListPetsRequest)
 }
 
 // ShowPetByID - Info for a specific pet
-
 func (s *pets) ShowPetByID(ctx context.Context, request operations.ShowPetByIDRequest) (*operations.ShowPetByIDResponse, error) {
 	baseURL := s.serverURL
 	url, err := utils.GenerateURL(ctx, baseURL, "/pets/{petId}", request, nil)

@@ -351,3 +351,11 @@ Based on:
 - Speakeasy CLI 1.32.0 https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [Go v0.23.0] https://github.com/speakeasy-sdks/advith-petstore-golang/releases/tag/v0.23.0 - .
+
+## Version 0.24.0
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/petstore.yaml
+- Speakeasy CLI 1.33.2 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [Go v0.24.0] https://github.com/speakeasy-sdks/advith-petstore-golang/releases/tag/v0.24.0 - .

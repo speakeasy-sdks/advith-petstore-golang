@@ -15,7 +15,8 @@ type ListPetsRequest struct {
 type ListPetsResponse struct {
 	ContentType string
 	// unexpected error
-	Error *shared.Error
+	Error   *shared.Error
+	Headers map[string][]string
 	// A paged array of pets
 	Pets        []shared.Pet
 	StatusCode  int

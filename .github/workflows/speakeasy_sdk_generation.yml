@@ -1,24 +1,19 @@
 name: Generate
-
-on:
+"on":
   workflow_dispatch:
     inputs:
       force:
-        description: "Force the generation of the SDKs"
+        description: Force the generation of the SDKs
         type: boolean
         default: false
-  schedule:
-    - cron: 0 0 * * * # Runs every day at midnight
-
 jobs:
   generate:
-    uses: speakeasy-api/sdk-generation-action/.github/workflows/sdk-generation.yaml@v10 # Import the sdk generation workflow which will handle the generation of the SDKs and publishing to the package managers
+    uses: speakeasy-api/sdk-generation-action/.github/workflows/sdk-generation.yaml@v10
     with:
       force: ${{ github.event.inputs.force }}
-      speakeasy_version: latest
+      languages: '- go'
       openapi_doc_location: https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/petstore.yaml
-      languages: |-
-        - go
+      speakeasy_version: latest
     secrets:
-      speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
+      speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}
